@@ -1,0 +1,63 @@
+body {
+	background-color: whitesmoke;
+	padding: 0 10px;
+}
+
+.hide {
+	display: none;
+}
+
+.tile.3 {
+	background-color: green !important;
+}
+
+.shipyard {
+	width: 500px;
+}
+
+.my-shipyard {
+	float: left;
+}
+
+.their-shipyard {
+	float: right;
+}
+
+.tile {
+	float: left;
+	width: 50px;
+	height: 50px;
+	background-image: url('/img/wave-icon.png');
+	background-size: 50px 50px;
+}
+
+.tile.ship {
+	background-image: url('/img/battleship.png');
+}
+
+.tile.hit {
+	background-image: url('/img/hit.png');
+}
+
+.tile.miss {
+	background-image: url('/img/miss.png');
+}
+
+.my-turn .their-shipyard .tile:hover {
+	background-color: deepskyblue;
+}
+
+.main-screen {
+	text-align: center;
+}
+
+.main-screen img {
+	width: 500px;
+}
+
+button {
+	font-size: 20px;
+	font-weight: bold;
+	width: 350px;
+	height: 80px;
+}

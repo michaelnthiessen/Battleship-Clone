@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="battleship">
+<head>
+	<title>Battleship</title>
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+</head>
+<body ng-controller="main-controller">
+	<div class="main-screen">
+		<img src="/img/BattleshipLogo.png">
+		<br>
+		<button ng-click="play()" ng-bind="buttonText"></button>
+	</div>
+
+	<div class="play-screen hide">
+		<div class="shipyard my-shipyard">
+			<h2>My Shipyard</h2>
+			<div class="row" ng-repeat="row in getNumRows()">
+				<div class="tile" ng-class="[row, tile]" ng-repeat="tile in getNumTiles()">
+					{{ row }}, {{ tile }}
+				</div>
+			</div>
+		</div>
+
+		<div class="game-info">
+			<h2 ng-bind="gameInfo"></h2>
+		</div>
+
+		<div class="shipyard their-shipyard">
+			<h2>Their Shipyard</h2>
+			<div class="row" ng-repeat="row in getNumRows()">
+				<div class="tile" ng-repeat="tile in getNumTiles()" ng-click="attack(row, tile)">
+					{{ row }}, {{ tile }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/angular.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>
